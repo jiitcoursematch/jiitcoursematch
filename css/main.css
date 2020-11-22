@@ -67,6 +67,85 @@
  * # custom block grid STACK breakpoints
  *
  * ------------------------------------------------------------------- */
+
+
+ /*Additions*/
+
+ .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: rgb(238, 47, 76);
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card1 {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.card1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: rgb(238, 47, 76);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+  
+
+.card1:hover:before {
+    transform: scale(21);
+  }
+
+
+.card1:hover p{
+    transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+.card1:hover h2 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+  }
+
+
 @media screen and (max-width:1000px) {
   .block-1000-full > .column {
     -webkit-flex: 0 0 100%;
@@ -153,14 +232,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   text-rendering: optimizeLegibility;
 }
 
+.black h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+}
+
+.white h1, h3, h4, h5, h6{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-  margin-top: 6rem;
+  margin-top: 3rem;
   margin-bottom: 1.6rem;
 }
 
 @media screen and (max-width:600px) {
   h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-    margin-top: 5.6rem;
+    margin-top: 4.0rem;
   }
 
 }
@@ -1594,7 +1691,7 @@ input::-moz-focus-inner {
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: .3rem;
-  color: #fb8b23;
+  color: rgb(238, 47, 76);
   margin-top: 0;
   margin-bottom: .4rem;
   margin-left: 4px;
@@ -2074,7 +2171,7 @@ input::-moz-focus-inner {
   width: 100%;
   height: 100%;
   background-color: #050505;
-  opacity: .5;
+  opacity: .2;
 }
 
 .no-js .s-hero {
@@ -2125,12 +2222,19 @@ input::-moz-focus-inner {
   position: relative;
 }
 
+.hero-content h4 {
+  letter-spacing: 0;
+  color: #ffffff;
+  margin-top: 0;
+  position: relative;
+}
+
 .hero-content h1::before {
   display: block;
   content: "";
   height: 2px;
   width: 10rem;
-  background-color: #7d1c24;
+  background-color: #ffffff;
   position: absolute;
   top: 0;
   left: .8rem;
@@ -2520,12 +2624,12 @@ html.no-csstransitions .hero-content {
 .s-about {
   padding-top: 19.6rem;
   padding-bottom: 19.6rem;
-  background-color: #3b0d11;
+  background-color: #000000;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .s-about .subhead {
-  color: #fb8b23;
+  color: rgb(238, 47, 76);
   margin-bottom: 4rem;
 }
 
@@ -2538,8 +2642,8 @@ html.no-csstransitions .hero-content {
   display: block;
   width: 100%;
   margin-right: 0;
-  background-color: #21070a;
-  border-color: #21070a;
+  background-color: rgb(238, 47, 76);
+  border-color:rgb(238, 47, 76);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3131,9 +3235,8 @@ html.no-csstransitions .hero-content {
  *
  * ------------------------------------------------------------------- */
 .s-footer {
-  padding-top: 12rem;
-  padding-bottom: 8rem;
-  background-color: #3b0d11;
+  padding-bottom: 4rem;
+  background-color: rgb(238, 47, 76);
   font-family: "Open Sans", sans-serif;
   font-size: 1.7rem;
   line-height: 1.882;
@@ -3209,7 +3312,7 @@ html.no-csstransitions .hero-content {
 .ss-copyright {
   margin-top: 4.8rem;
   padding-right: 80px;
-  color: rgba(255, 255, 255, 0.3);
+  color: #000000;
 }
 
 .ss-copyright span {
